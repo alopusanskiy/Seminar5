@@ -11,14 +11,13 @@ int[] FillArray(int size)
     {
         array[i] = random.Next(0, 16); // диапазон маленький, что бы было удобно проверять правильность работы программы.
     }
-    System.Console.Write("[ " + string.Join(", ", array) + " ]");
     return array;
 }
 
-// void PrintArray(int[] arr)
-// {
-//     System.Console.Write("[ " + string.Join(", ", arr) + " ]");
-// }
+void PrintArray(int[] arr)
+{
+    System.Console.Write("[ " + string.Join(", ", arr) + " ]");
+}
 
 
 void OddNum(int[] array)
@@ -35,7 +34,11 @@ void OddNum(int[] array)
     System.Console.WriteLine(sum);
 }
 
-OddNum(FillArray(5));
+int[] array = FillArray(6);
+
+PrintArray(array);
+
+OddNum(array);
 
 
 
