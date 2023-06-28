@@ -14,7 +14,33 @@ double[] FillArray(int size)
 }
 void PrintArray(double[] arr)
 {
-    System.Console.Write("[ " + string.Join(", ", arr) + " ]");
+    System.Console.Write("[ " + string.Join(", ", arr) + " ] => ");
 }
 
-PrintArray(FillArray(6));
+void Diffirent(double[] arr)
+{
+    double minValue = arr[0];
+    double maxValue = arr[1];
+    double result = 0;
+
+    for (int i = 1; i < arr.Length; i++)
+    {
+        if (arr[i] < minValue)
+        {
+           minValue = arr[i]; 
+        }
+        else if (arr[i] > maxValue)
+        {
+            maxValue = arr[i];
+        }
+    }
+    result = maxValue - minValue;
+
+    System.Console.Write(maxValue + " - " + minValue + " = " + result);
+}
+
+double[] array = FillArray(5);
+
+PrintArray(array);
+
+Diffirent(array);
